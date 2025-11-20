@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Proyecto Final - Editor de Texto</title>
+    <link rel="stylesheet" href="/final.css">
 </head>
 <body>
 
@@ -10,21 +11,22 @@
 
     <!-- Barra de herramientas -->
     <div id="barra">
-        <button id="btn-palabras">Palabras</button>
-        <button id="btn-signos">Signos</button>
-        <button id="btn-vocales">Vocales</button>
-        <button id="btn-consonantes">Consonantes</button>
-        <button id="btn-digitos">Dígitos</button>
-        <button id="btn-mayus">Mayúsculas</button>
-        <button id="btn-minus">Minúsculas</button>
-        <button id="btn-parrafos">Párrafos</button>
-        <button id="btn-invertir">Invertir</button>
-        <button id="btn-caracteres">Caracteres</button>
-        <button id="btn-buscar">Buscar Palabra</button>
-        <button id="btn-contar-caracter">Contar Carácter</button>
-        <button id="btn-pares">Posiciones Pares</button>
-        <button id="btn-impares">Posiciones Impares</button>
-        <button id="btn-agregar">Agregar Texto</button>
+      <button id="btn-palabras" onclick="uno()">📝 Palabras</button>
+<button id="btn-signos" onclick="dos()">❗ Signos</button>
+<button id="btn-vocales" onclick="tres()">🔊 Vocales</button>
+<button id="btn-consonantes" onclick="cuatro()">🔤 Consonantes</button>
+<button id="btn-digitos" onclick="cinco()">🔢 Dígitos</button>
+<button id="btn-mayus" onclick="seis()">🔠 Mayúsculas</button>
+<button id="btn-minus" onclick="siete()">🔡 Minúsculas</button>
+<button id="btn-parrafos" onclick="ocho()">📄 Párrafos</button>
+<button id="btn-invertir" onclick="nueve()">🔄 Invertir</button>
+<button id="btn-caracteres" onclick="diez()">🔤 Caracteres</button>
+<button id="btn-buscar" onclick="once()">🔍 Buscar Palabra</button>
+<button id="btn-contar-caracter" onclick="doce()">📊 Contar Carácter</button>
+<button id="btn-pares" onclick="trece()">👥 Posiciones Pares</button>
+<button id="btn-impares" onclick="catorce()">👥 Posiciones Impares</button>
+<button id="btn-agregar" onclick="quince()">➕ Agregar Texto</button>
+<button id="btn-negrita" onclick="dieciséis()"><b>𝐁</b> Negrita</button>
     </div>
 
     <br>
@@ -33,11 +35,12 @@
     <textarea id="texto" rows="12" cols="80" placeholder="Escribe aquí tu texto..."></textarea>
 
     <br><br>
+    
 
     <!-- Área de resultados -->
     <div id="resultado" style="border:1px solid black; padding:10px; width:700px;">
         <strong>Resultados aparecerán aquí...</strong>
     </div>
-
+<script src="/final.js"></script>
 </body>
 </html>

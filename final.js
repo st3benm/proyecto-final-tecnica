@@ -22,7 +22,7 @@ class final {
             }
 
         }
-        r2.textContent = (`Palabras ${cv}`)
+        r2.textContent = (`Numero de palabras: ${cv} `)
     }
     contarSignos() {
         let r = this.textarea.value;
@@ -205,26 +205,110 @@ class final {
     contarPares() {
         let r = this.textarea.value;
         let r2 = this.resultado;
-        let cv=0;
-        for(let c=1;c<r.length;c+=2){
+        let cv = 0;
+        for (let c = 1; c < r.length; c += 2) {
             cv++;
 
-            
+
         }
-        r2.textContent=(`Existen ${cv} caracteres que estan en pocisión par `)
+        r2.textContent = (`Existen ${cv} caracteres que estan en pocisión par `)
     }
-    contarImpares(){
-         let r = this.textarea.value;
+    contarImpares() {
+        let r = this.textarea.value;
         let r2 = this.resultado;
-        let cv=0
-        for(let c=0;c<r.length;c+=2){
+        let cv = 0
+        for (let c = 0; c < r.length; c += 2) {
             cv++
 
         }
-        r2.textContent=(`Hay ${cv} caracteres que estan en posicion impar`)
+        r2.textContent = (`Hay ${cv} caracteres que estan en posicion impar`)
 
     }
+    añadirTexto() {
+        let r = this.textarea.value;
+        let r2 = this.resultado;
+        let nuevoTexto = "";
+        let nuevoTexto2 = "";
+        let fragmento = prompt(`Ingrese el fragmento que quiere agregar al texto`)
+        for (let c = 0; c < r.length; c++) {
+            if (c === 0) {
+                nuevoTexto = fragmento+" " + r
+            }
+            if (c === r.length - 1) {
+                nuevoTexto2 = r +" "+ fragmento
+
+            }
+        }
+      r2.innerHTML = (`<strong>Resultado al inicio:</strong> ${nuevoTexto}<br><br>`)
+    r2.innerHTML += (`<strong>Resultado final:</strong> ${nuevoTexto2}`)
 }
 
+    }
 
 
+
+let analizador = new final("texto", "resultado");
+
+function uno() {
+    analizador.contarPalabras();
+}
+function dos() {
+    analizador.contarSignos();
+}
+function tres() {
+    analizador.contarVocales();
+}
+function cuatro() {
+    analizador.contarConsonantes();
+}
+function cinco() {
+    analizador.contarDigitos();
+}
+function seis() {
+    analizador.contarMayuscula();
+}
+function siete() {
+    analizador.contarMinuculas();
+}
+function ocho() {
+    analizador.contarParrafos();
+}
+function nueve() {
+    analizador.invertirTexto();
+}
+function diez() {
+    analizador.contarCaracteres();
+}
+function once() {
+    analizador.buscarpalabra();
+}
+function doce() {
+    analizador.contarCaracter();
+}
+function trece() {
+    analizador.contarPares();
+}
+function catorce() {
+    analizador.contarImpares();
+}
+function quince() {
+    analizador.añadirTexto();
+}
+function dieciséis() {
+    const textarea = document.getElementById('texto');
+    const inicio = textarea.selectionStart;
+    const fin = textarea.selectionEnd;
+    const textoSeleccionado = textarea.value.substring(inicio, fin);
+    
+    if (textoSeleccionado.length === 0) {
+        document.getElementById('resultado').innerHTML = '<strong>⚠️ Error:</strong> Por favor, selecciona una palabra primero';
+        return;
+    }
+    
+    const textoNegrita = '**' + textoSeleccionado + '**';
+    const textoAntes = textarea.value.substring(0, inicio);
+    const textoDespues = textarea.value.substring(fin);
+    textarea.value = textoAntes + textoNegrita + textoDespues;
+    
+    document.getElementById('resultado').innerHTML = '<strong>✓ Hecho:</strong> La palabra "<strong>' + textoSeleccionado + '</strong>" se puso en negrita';
+}
