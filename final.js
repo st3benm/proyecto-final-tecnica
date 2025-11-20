@@ -312,3 +312,21 @@ function dieciséis() {
     
     document.getElementById('resultado').innerHTML = '<strong>✓ Hecho:</strong> La palabra "<strong>' + textoSeleccionado + '</strong>" se puso en negrita';
 }
+function diecisiete() {
+    const textarea = document.getElementById('texto');
+    const inicio = textarea.selectionStart;
+    const fin = textarea.selectionEnd;
+    const textoSeleccionado = textarea.value.substring(inicio, fin);
+    
+    if (textoSeleccionado.length === 0) {
+        document.getElementById('resultado').innerHTML = '<strong>⚠️ Error:</strong> Por favor, selecciona una palabra primero';
+        return;
+    }
+    
+    const textoTachado = '~~' + textoSeleccionado + '~~';
+    const textoAntes = textarea.value.substring(0, inicio);
+    const textoDespues = textarea.value.substring(fin);
+    textarea.value = textoAntes + textoTachado + textoDespues;
+    
+    document.getElementById('resultado').innerHTML = '<strong>✓ Hecho:</strong> La palabra "<s>' + textoSeleccionado + '</s>" se tachó';
+}
